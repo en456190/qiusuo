@@ -12,9 +12,13 @@ class index extends BaseController
 {
     public function index()
     {
-
         //return 111;
         return View::fetch('index');
+    }
+
+    public function welcome()
+    {
+        return View::fetch('welcome');
     }
 
 
