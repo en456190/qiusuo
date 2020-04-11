@@ -4,11 +4,13 @@ declare (strict_types = 1);
 namespace app\admin\controller;
 
 use app\BaseController;
+use think\captcha\facade\Captcha;
 use think\facade\View;
 use think\Request;
 
 class login extends BaseController
 {
+
     /**
      * 显示资源列表
      *
@@ -17,6 +19,16 @@ class login extends BaseController
     public function index()
     {
         return View::fetch('login');
+    }
+
+    public function verify()
+    {
+        return Captcha::create('loginverify');
+    }
+
+    public function check()
+    {
+        return;
     }
 
     /**
