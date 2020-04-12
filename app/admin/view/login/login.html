@@ -2,37 +2,87 @@
 <html  class="x-admin-sm">
 {include file='public/header' /}
 <body class="login-bg">
-    
     <div class="login layui-anim layui-anim-up">
         <div class="message">球索养老-管理登录V1.0</div>
-        <div id="darkbannerwrap"></div>
-        
-        <form method="post" class="layui-form" >
-            <input  id="username" placeholder="用户名"  type="text" lay-verify="required" class="layui-input" >
-            <hr class="hr15">
-            <input id="password" lay-verify="required" placeholder="密码"  type="password" class="layui-input">
-            <hr class="hr15">
-            <div class="layui-input-inline" >
-                <input id="checkcode" lay-verify="required" placeholder="验证码"  type="text" class="layui-input">
 
+        <form method="post" class="layui-form" >
+            <input  id="username" name="username" placeholder="用户名"  type="text"  class="layui-input" >
+            <hr class="hr15">
+            <input id="password" name="password" lay-verify="required" placeholder="密码"  type="password" class="layui-input">
+            <hr class="hr15">
+            <div class="layui-input-inline" >
+                <input id="verifycode" name="verifycode" lay-verify="required" placeholder="验证码"  type="text" class="layui-input">
             </div>
             <div class="layui-input-inline" >
-                <img src="{:url('login/verify')}" id="img" alt="captcha" onclick="this.src='{:url(\'login/verify\')}?'+Math.random()">
+                <img src="{:url('login/verify')}" id="img"  alt="captcha" onclick="onRloadVerify()">
             </div>
-            <!-- <img src="{:captcha_src()}" /> -->
-            <!--<div>{:captcha_img()}</div> -->
             <hr class="hr15">
             <input value="登录" lay-submit lay-filter="login" style="width:100%;" type="submit">
             <hr class="hr20" >
         </form>
+
     </div>
 
-    <script type="text/javascript">
-        layui.use(['form'], function(){
-            //用户名空间获取焦点
-            $('#username').focus();
-        });
+
+    <script  type="text/javascript">
+        $(function  () {
+            layui.use('form', function(){
+                var form = layui.form;
+                layer = layui.layer;
+                $ = layui.jquery;
+
+                //监听提交
+                form.on('submit(login)', function(data){
+                    dologin(data);
+                    //必须要填写 return false;
+                    return false;
+                });
+            });
+        })
+
+        //更新验证码图片
+        function onRloadVerify()
+        {
+            $('#img').attr('src', '{:url(\'login/verify\')}?'+Math.random());
+            $('#verifycode').val("");
+            return;
+        }
+
+        //登陆功能
+        function dologin(data)
+        {
+            $.ajax({
+                type:'POST',
+                url:"{:url(\'login/dologin\')}",
+                data:data.field,
+                datatype:'json',
+                success:function(result){
+                    //验证成功，跳转到管理首页
+                    if (result.code == 0)
+                    {
+                        layer.alert(result.msg, {icon: 1, time:2000});
+
+                        setTimeout(function(){
+                            window.location.href = '{:url(\'index/index\')}';
+                        }, 1000);
+                    }
+                    else //验证失败，重新验证
+                    {
+                        layer.alert(result.msg, {icon: 2});
+                        onRloadVerify();
+                    }
+                },
+                error:function(result)
+                {
+                    layer.alert('环境或网络异常，稍后登陆', {icon:2});
+                    onRloadVerify();
+                }
+            });
+
+            return;
+        }
 
     </script>
 </body>
+
 </html>

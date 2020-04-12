@@ -6,13 +6,12 @@ namespace app\admin\controller;
 
 use app\BaseController;
 use think\facade\View;
+use app\admin\common\Base;
 
-
-class index extends BaseController
+class index extends Base
 {
     public function index()
     {
-        //return 111;
         return View::fetch('index');
     }
 
