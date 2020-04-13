@@ -31,6 +31,9 @@
                 layer = layui.layer;
                 $ = layui.jquery;
 
+                $('#username').val("");
+                $('#password').val("");
+                onRloadVerify();
                 //监听提交
                 form.on('submit(login)', function(data){
                     dologin(data);
@@ -44,6 +47,7 @@
         function onRloadVerify()
         {
             $('#img').attr('src', '{:url(\'login/verify\')}?'+Math.random());
+
             $('#verifycode').val("");
             return;
         }
@@ -60,7 +64,7 @@
                     //验证成功，跳转到管理首页
                     if (result.code == 0)
                     {
-                        layer.alert(result.msg, {icon: 1, time:2000});
+                        layer.msg(result.msg, {icon: 1, time:2000});
 
                         setTimeout(function(){
                             window.location.href = '{:url(\'index/index\')}';
@@ -68,13 +72,13 @@
                     }
                     else //验证失败，重新验证
                     {
-                        layer.alert(result.msg, {icon: 2});
+                        layer.msg(result.msg, {icon: 2});
                         onRloadVerify();
                     }
                 },
                 error:function(result)
                 {
-                    layer.alert('环境或网络异常，稍后登陆', {icon:2});
+                    layer.msg('环境或网络异常，稍后登陆', {icon:2});
                     onRloadVerify();
                 }
             });

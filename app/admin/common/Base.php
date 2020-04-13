@@ -6,6 +6,7 @@ namespace app\admin\common;
 
 use app\BaseController;
 use think\App;
+use think\facade\Session;
 
 class Base extends BaseController
 {
@@ -13,10 +14,10 @@ class Base extends BaseController
     {
         parent::__construct($app);
 
-        $this->admin = session('admin');
+        $this->admin = Session::get('admin');
         if (!$this->admin)
         {
-            header('Location: login/index');
+            header('Location: /admin/login/index');
             exit;
         }
     }
