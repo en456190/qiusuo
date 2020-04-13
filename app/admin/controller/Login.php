@@ -3,11 +3,14 @@ declare (strict_types = 1);
 
 namespace app\admin\controller;
 
+use app\admin\model\Admin;
 use app\BaseController;
 use think\captcha\facade\Captcha;
 use think\facade\Db;
+use think\facade\Session;
 use think\Request;
 use think\facade\View;
+
 
 
 class login extends BaseController
@@ -58,8 +61,9 @@ class login extends BaseController
         }
 
         //检查用户名和密码是否有效
-        $admin = Db::connect('qiusuo')->table('admin')->where('username', $username)->find();
-        if (!$admin) //用户不存在
+        $admin = Admin::where('username', $username)->find();
+        //$admin = Db::connect('qiusuo')->table('admin')->where('username', $username)->find();
+        if (is_null($admin)) //用户不存在
         {
             return json(['code'=>3, 'msg'=>'用户不存在'] );
         }
@@ -76,74 +80,19 @@ class login extends BaseController
             return json(['code'=>5, 'msg'=>'账户被禁用，请联系管理员'] );
         }
 
-        session('admin', $admin);
+        $admin->save(['login_time' => date("Y-m-d H:i:s", time())]);
+        Session::set('admin', $admin);
         //登陆成功
         return json(['code'=>0, 'msg'=>'登陆成功'] );
     }
 
     /**
-     * 显示创建资源表单页.
-     *
-     * @return \think\Response
+     * 安全退出
      */
-    public function create()
+    public function dologout()
     {
-        //
-    }
+        Session::delete('admin');
 
-    /**
-     * 保存新建的资源
-     *
-     * @param  \think\Request  $request
-     * @return \think\Response
-     */
-    public function save(Request $request)
-    {
-        //
-    }
-
-    /**
-     * 显示指定的资源
-     *
-     * @param  int  $id
-     * @return \think\Response
-     */
-    public function read($id)
-    {
-        //
-    }
-
-    /**
-     * 显示编辑资源表单页.
-     *
-     * @param  int  $id
-     * @return \think\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * 保存更新的资源
-     *
-     * @param  \think\Request  $request
-     * @param  int  $id
-     * @return \think\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * 删除指定资源
-     *
-     * @param  int  $id
-     * @return \think\Response
-     */
-    public function delete($id)
-    {
-        //
+        return redirect('/admin/login/index');
     }
 }
