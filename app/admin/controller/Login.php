@@ -3,10 +3,9 @@ declare (strict_types = 1);
 
 namespace app\admin\controller;
 
-use app\admin\model\Admin;
+use app\admin\model\Admin as AdminModel;
 use app\BaseController;
 use think\captcha\facade\Captcha;
-use think\facade\Db;
 use think\facade\Session;
 use think\Request;
 use think\facade\View;
@@ -61,7 +60,7 @@ class login extends BaseController
         }
 
         //检查用户名和密码是否有效
-        $admin = Admin::where('username', $username)->find();
+        $admin = AdminModel::where('username', $username)->find();
         //$admin = Db::connect('qiusuo')->table('admin')->where('username', $username)->find();
         if (is_null($admin)) //用户不存在
         {
@@ -75,7 +74,7 @@ class login extends BaseController
         }
 
         //检查账户是否被禁用
-        if ($admin['status'] != 0)
+        if ($admin['status'] != 1)
         {
             return json(['code'=>5, 'msg'=>'账户被禁用，请联系管理员'] );
         }
