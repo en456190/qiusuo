@@ -24,6 +24,7 @@ return [
     'taglib_end'    => '}',
     'tpl_replace_string' => [
         //'__STATIC__'=> \think\facade\App::GetRootPath(). 'public/static'
-        '__STATIC__'=> '/static'
+        '__STATIC__'=> '/static',
+        '__INDEXPATH__'=> '/static/index'
     ],
 ];
