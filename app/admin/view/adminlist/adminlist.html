@@ -7,7 +7,8 @@
             <a href="">首页</a>
             <a href="">演示</a>
             <a>
-              <cite>导航元素</cite></a>
+              <cite>导航元素</cite>
+            </a>
           </span>
     <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" onclick="location.reload()" title="刷新">
         <i class="layui-icon layui-icon-refresh" style="line-height:30px"></i></a>
@@ -19,23 +20,24 @@
                 <div class="layui-card-body ">
                     <form class="layui-form layui-col-space5">
                         <div class="layui-inline layui-show-xs-block">
-                            <input class="layui-input"  autocomplete="off" placeholder="开始日" name="start" id="start">
+                            <input type="text" id="search" name="search" value="{$data.username}"  placeholder="请输入用户名" autocomplete="off" class="layui-input">
                         </div>
                         <div class="layui-inline layui-show-xs-block">
-                            <input class="layui-input"  autocomplete="off" placeholder="截止日" name="end" id="end">
+                            <button class="layui-btn" onclick="return false;"  lay-submit="" lay-filter="sreach">
+                                <i class="layui-icon">&#xe615;</i>
+                            </button>
+
                         </div>
-                        <div class="layui-inline layui-show-xs-block">
-                            <input type="text" name="username"  placeholder="请输入用户名" autocomplete="off" class="layui-input">
-                        </div>
-                        <div class="layui-inline layui-show-xs-block">
-                            <button class="layui-btn"  lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
-                        </div>
+
                     </form>
                 </div>
                 <div class="layui-card-header">
-                    <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>
-                    <button class="layui-btn" onclick="xadmin.open('添加用户','{:url(\'adminlist/adminadd\')}',600,400)">
-                        <i class="layui-icon"></i>添加</button>
+                    <button class="layui-btn layui-btn-danger" onclick="delAll()">
+                        <i class="layui-icon"></i>批量删除
+                    </button>
+                    <button class="layui-btn" onclick="xadmin.open('添加用户','{:url(\'adminlist/adminadd\')}',550,420)">
+                        <i class="layui-icon"></i>添加
+                    </button>
                 </div>
                 <div class="layui-card-body layui-table-body layui-table-main">
                     <table class="layui-table layui-form">
@@ -46,7 +48,8 @@
                                     <b>全选</b>
                                 </th>
                                 <th><b>用户名</b></th>
-                                <th><b>分组</b></th>
+                                <th><b>手机</b></th>
+                                <th><b>角色</b></th>
                                 <th><b>登陆时间</b></th>
                                 <th><b>状态</b></th>
                                 <th><b>操作</b></th>
@@ -58,8 +61,9 @@
                             <td>
                                 <input type="checkbox" name="id" value="{$i}"   lay-skin="primary">
                             </td>
-                            <td>{$admin.username}</td>
-                            <td>{$admin.groupid}</td>
+                            <td id="username{$i}">{$admin.username}</td>
+                            <td>{$admin.phonenum}</td>
+                            <td>{$admin.admin_role.title}</td>
                             <td>{$admin.login_time}</td>
                             <td class="td-status">
                                 {$admin.status==1?'<span class="layui-btn layui-btn-mini" >正常</span>':
@@ -73,13 +77,10 @@
                                     '<i class="layui-icon">&#xe62f;</i>'}
 
                                 </a>
-                                <a title="编辑"  onclick="xadmin.open('编辑','member-edit.html',600,400)" href="javascript:;">
+                                <a title="编辑"  onclick="xadmin.open('编辑','{:url(\'adminlist/adminedit\')}?username={$admin.username}',600,450)" href="javascript:;">
                                     <i class="layui-icon">&#xe642;</i>
                                 </a>
-                                <a onclick="xadmin.open('修改密码','member-password.html',600,400)" title="修改密码" href="javascript:;">
-                                    <i class="layui-icon">&#xe631;</i>
-                                </a>
-                                <a title="删除" onclick="member_del(this,'要删除的id')" href="javascript:;">
+                                <a title="删除" onclick="member_del(this, '{$admin.username}')" href="javascript:;">
                                     <i class="layui-icon">&#xe640;</i>
                                 </a>
                             </td>
@@ -104,10 +105,10 @@
         var laydate = layui.laydate;
         var form = layui.form;
         var laypage = layui.laypage;
-
+        $ = layui.jquery;
+        //$('#search').val('');
         // 监听全选
         form.on('checkbox(checkall)', function(data){
-
             if(data.elem.checked){
                 $('tbody input').prop('checked',true);
             }else{
@@ -126,6 +127,16 @@
             elem: '#end' //指定元素
         });
 
+
+
+        //搜索用户名
+        form.on('submit(sreach)', function(data){
+            //
+            findAdminBy(1);
+
+            return false;
+        });
+
         laypage.render({
             elem:'pages'
             ,limit:{$data.pagesize}
@@ -134,17 +145,30 @@
             ,jump:function(obj, first) {
                 if(!first){
                     //do something
-                    window.location.href="?page="+obj.curr;
+                    findAdminBy(obj.curr);
                 }
             }
+
         });
 
     });
-
+    //更新账户状态及页面显示
+    function findAdminBy(currPage)
+    {
+        var username = $.trim($('#search').val());
+        var url = '{:url(\'adminlist/index\')}?page='+currPage;
+        if ('' != username)
+        {
+            url += '&search=' + username;
+        }
+        window.location.href = url;
+    }
     //更新账户状态及页面显示
     function admin_update(obj, admin, status)
     {
-        $.post('{:url(\'adminlist/adminupdate\')}', {'username':admin.username, 'status': status}, function(res){
+        $.post('{:url(\'adminlist/adminupdatestatus\')}',  //url
+            {'username':admin.username, 'status': status}, //提交的数据
+            function(res){
             if (res.code > 0)
             {
                 layer.msg('系统更新失败，请稍后再试', {icon: 5, time: 1000});
@@ -192,12 +216,35 @@
         });
     }
 
+    function admindel(ids)
+    {
+        $.post('{:url(\'adminlist/admindel\')}', {'ids':JSON.stringify(ids)}, function(res){
+            if (res.code > 0)
+            {
+                layer.alert(res.msg, {icon: 2});
+            }
+            else
+            {
+                layer.alert(res.msg, {icon: 6}, function() {
+                    //关闭当前frame
+                    //xadmin.close();
+                    // 可以对父窗口进行刷新
+                    //window.location.reload();
+                    findAdminBy(1);
+                });
+            }
+        }, 'json');
+    }
+
     /*用户-删除*/
     function member_del(obj,id){
         layer.confirm('确认要删除吗？',function(index){
-            //发异步删除数据
-            $(obj).parents("tr").remove();
-            layer.msg('已删除!',{icon:1,time:1000});
+
+            var ids = [];
+            ids.push("'"+id+"'");
+            admindel(ids);
+
+            return false;
         });
     }
 
@@ -209,14 +256,18 @@
         // 获取选中的id 
         $('tbody input').each(function(index, el) {
             if($(this).prop('checked')){
-                ids.push($(this).val())
+                //ids.push("'"+$(this).username.val()+"'");
+                var username = $('#username'+(index+1)).text();
+                ids.push("'"+username+"'");
             }
         });
 
         layer.confirm('确认要删除吗？'+ids.toString(),function(index){
             //捉到所有被选中的，发异步进行删除
-            layer.msg('删除成功', {icon: 1});
-            $(".layui-form-checked").not('.header').parents('tr').remove();
+            // layer.msg('删除成功', {icon: 1});
+            // $(".layui-form-checked").not('.header').parents('tr').remove();
+            admindel(ids);
+            return false;
         });
     }
 </script>

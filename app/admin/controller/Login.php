@@ -43,9 +43,9 @@ class login extends BaseController
     {
         $data = $request->param();
 
-        $username = $data['username'];
-        $password = $data['password'];
-        $verifycode = $data['verifycode'];
+        $username = trim($data['username']);
+        $password = trim($data['password']);
+        $verifycode = trim($data['verifycode']);
 
         //检验参数完整性
         if (('' == $username) || ('' == $password) || ('' == $verifycode))
