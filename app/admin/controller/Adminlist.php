@@ -46,6 +46,12 @@ class adminlist extends Base
         return View::fetch('adminlist');
     }
 
+    /**
+     * @return string
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\DbException
+     * @throws \think\db\exception\ModelNotFoundException
+     */
     public function adminadd()
     {
         $admin_role = Admin_role::select();
@@ -228,9 +234,7 @@ class adminlist extends Base
      */
     public function adminrole()
     {
-        $admin_role = Admin_role::select();
-        View::assign('admin_role', $admin_role);
-        return View::fetch("adminrole");
+
     }
 
 
