@@ -3,3 +3,4 @@
 /vendor
 *.log
 .env
+app/index/view/index/demo.html
