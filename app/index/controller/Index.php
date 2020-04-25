@@ -6,6 +6,11 @@ use think\facade\View;
 
 class Index extends BaseController
 {
+    /**
+     * 网站首页
+     * @return string
+     * @throws \Exception
+     */
     public function index()
     {
         return View::fetch('index');

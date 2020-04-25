@@ -128,11 +128,11 @@ body .layui-layout-admin .footer-demo{height: 50px; line-height: 50px; padding: 
 
 /* 描述字体 */
 @font-face {font-family: 'webfont-desc';
-  src: url("../../../at.alicdn.com/t/webfont_eovt4pxxy5.eot")/*tpa=https://at.alicdn.com/t/webfont_eovt4pxxy5.eot*/; /* IE9*/
-  src: url("../../../at.alicdn.com/t/webfont_eovt4pxxy5.eot-#iefix")/*tpa=https://at.alicdn.com/t/webfont_eovt4pxxy5.eot?#iefix*/ format('embedded-opentype'), /* IE6-IE8 */
-  url("../../../at.alicdn.com/t/webfont_eovt4pxxy5.woff")/*tpa=https://at.alicdn.com/t/webfont_eovt4pxxy5.woff*/ format('woff'), /* chrome、firefox */
-  url("../../../at.alicdn.com/t/webfont_eovt4pxxy5.ttf")/*tpa=https://at.alicdn.com/t/webfont_eovt4pxxy5.ttf*/ format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-  url("../../../at.alicdn.com/t/webfont_eovt4pxxy5.svg#思源黑体-极细")/*tpa=https://at.alicdn.com/t/webfont_eovt4pxxy5.svg#思源黑体-极细*/ format('svg'); /* iOS 4.1- */
+  /*src: url("../../../at.alicdn.com/t/webfont_eovt4pxxy5.eot")!*tpa=https://at.alicdn.com/t/webfont_eovt4pxxy5.eot*!; !* IE9*!*/
+  /*src: url("../../../at.alicdn.com/t/webfont_eovt4pxxy5.eot-#iefix")!*tpa=https://at.alicdn.com/t/webfont_eovt4pxxy5.eot?#iefix*! format('embedded-opentype'), !* IE6-IE8 *!*/
+  /*url("../../../at.alicdn.com/t/webfont_eovt4pxxy5.woff")!*tpa=https://at.alicdn.com/t/webfont_eovt4pxxy5.woff*! format('woff'), !* chrome、firefox *!*/
+  /*url("../../../at.alicdn.com/t/webfont_eovt4pxxy5.ttf")!*tpa=https://at.alicdn.com/t/webfont_eovt4pxxy5.ttf*! format('truetype'), !* chrome、firefox、opera、Safari, Android, iOS 4.2+*!*/
+  /*url("../../../at.alicdn.com/t/webfont_eovt4pxxy5.svg#思源黑体-极细")!*tpa=https://at.alicdn.com/t/webfont_eovt4pxxy5.svg#思源黑体-极细*! format('svg'); !* iOS 4.1- *!*/
 }
 .web-font-desc{
   font-family:"webfont-desc" !important;
@@ -176,7 +176,7 @@ body .layui-layout-admin .footer-demo{height: 50px; line-height: 50px; padding: 
 .site-sponsor-home .layui-btn:hover{background: #4A4855; color: #BAB8C3;}
 
 .site-sponsor-home p{position: relative; padding-top: 15px; font-size: 22px; color: #212121;}
-.site-sponsor-home p:before{content: ''; position: relative; top: -2px; display: inline-block; vertical-align: middle; width: 30px; height: 30px; margin-right: 10px; background: url("../../../cdn.layui.com/upload/2018_1/168_1514869467160_26113.png")/*tpa=http://cdn.layui.com/upload/2018_1/168_1514869467160_26113.png*/ center; background-repeat: no-repeat; background-size: contain;}
+.site-sponsor-home p:before{content: ''; position: relative; top: -2px; display: inline-block; vertical-align: middle; width: 30px; height: 30px; margin-right: 10px; /*background: url("__INDEXPATH__/old/cdn.layui.com/upload/2018_1/168_1514869467160_26113.png")*//*tpa=http://cdn.layui.com/upload/2018_1/168_1514869467160_26113.png center*/; background-repeat: no-repeat; background-size: contain;}
 @media screen and (max-width: 750px) {
   .site-sponsor-home .layui-btn{width: 180px; height: 45px; line-height: 45px; font-size: 20px;}
   .site-sponsor-home p{font-size: 16px;}
@@ -431,7 +431,7 @@ body .site-demo-nav .layui-nav-item{line-height: 40px}
   .footer-demo p,
   .footer-demo .site-union{height: auto; padding-right: 0;}
   .footer-demo .site-union{top: 0;}
-  .footer-demo .site-union span{top: ;}
+  .footer-demo .site-union span{top: 0 ;}
 
   .site-demo-area,
   .site-demo-editor,
