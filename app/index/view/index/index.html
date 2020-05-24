@@ -134,17 +134,22 @@
                 <span></span>热门模板
                 <span></span></p>
             <div class="layui-row layui-col-space20">
+                {foreach $hotBriefs as $brief}
                 <div class="layui-col-xs6 layui-col-md3">
-                    <a class="template store-list-box" href="layuiAdmin/index.htm" tppabs="https://fly.layui.com/store/layuiAdmin/">
-                        <img src="__INDEXPATH__/cdn.layui.com/upload/2018_11/168_1541542262728_21622.jpg" tppabs="https://cdn.layui.com/upload/2018_11/168_1541542262728_21622.jpg" class="store-list-cover">
-                        <h2 class="layui-elip">layuiAdmin 通用后台管理模板</h2>
+                    <a class="template store-list-box" href="layuiAdmin/index.htm">
+                        <img src="__INDEXPATH__/images/{$brief.img}.jpg" alt="{$brief.title}" class="store-list-cover">
+                        <h2 class="layui-elip">{$brief.name}</h2>
                         <p class="price">
-                            <span title="金额">收费</span></p>
+                            <span title="金额">收费{$brief.charge}</span>
+                        </p>
                     </a>
                 </div>
+                {/foreach}
+
+
                 <div class="layui-col-xs6 layui-col-md3">
                     <a class="template store-list-box" href="layuiQuietBlog/index.htm" tppabs="https://fly.layui.com/store/layuiQuietBlog/">
-                        <img src="__INDEXPATH__/cdn.layui.com/upload/2018_11/168_1541591846215_76528.jpg" tppabs="https://cdn.layui.com/upload/2018_11/168_1541591846215_76528.jpg" class="store-list-cover">
+                        <img src="__INDEXPATH__/images/{$value.img}.jpg" alt="{$value.title}" class="store-list-cover">
                         <h2 class="layui-elip">静谧风格个人博客模板</h2>
                         <p class="price">
                             <span title="金额">￥29</span></p>
