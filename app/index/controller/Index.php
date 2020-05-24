@@ -8,6 +8,11 @@ use think\facade\View;
 
 class Index extends BaseController
 {
+    /**
+     * 网站首页
+     * @return string
+     * @throws \Exception
+     */
     public function index()
     {
         $data = slide::where('type', 0)->select();

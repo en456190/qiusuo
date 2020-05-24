@@ -35,7 +35,7 @@
 .store-color-bar{display: inline-block; width: 30px; height: 8px; background-color: #009688;}
 
 /* 商城模板 */
-.shop-nav{background-color: #fff;}
+.v{background-color: #fff;}
 
 .topbar-logo{display: none;}
 .topbar-logo img{width: 82px;}
@@ -209,7 +209,7 @@
 .site-union span a:hover{text-decoration: underline;}
 
 @media screen and (min-width: 480px){
-  .shop-nav .input-search input,/* .shop-nav.shopdata .input-search input*/{width: 300px; display: inline-block;}
+  .shop-nav .input-search input/* .shop-nav.shopdata .input-search input*/{width: 300px; display: inline-block;}
   .shop-temp .temp-hot img + p{font-size: 20px;}
   .shop-temp.shoplist #shopList .layui-laypage a,.shop-temp.shoplist #shopList .layui-laypage span{padding: 0 15px; font-size: 18px; line-height: 40px; height: 40px; margin-right: 20px;}
   .shoplist-filter .layui-container div span{width: 100px;}
@@ -242,11 +242,11 @@
 @media screen and (min-width: 768px){
   .shop-nav.shop-index{padding-bottom: 0;}
 
-  .shop-nav .input-search input,/*.shop-nav.shopdata .input-search input*/{width: 550px;}
+  .shop-nav .input-search input/*.shop-nav.shopdata .input-search input*/{width: 550px;}
   /*.shop-nav.shopdata .input-search button.layui-btn-shop{width: 80px;}*/
   .shop-nav .input-search a.userBtn{width: 80px; font-size: 14px; margin-left: 20px;}
   .shop-nav .product-list dl dt{display: block;}
-  .shop-nav .product-list dl dd{display: block; width: 100%; margin: 0; line-height: 60px; border: none; border-radius: none; border-bottom: 1px solid #f0f0f0;}
+  .shop-nav .product-list dl dd{display: block; width: 100%; margin: 0; line-height: 60px; border: none; border-bottom: 1px solid #f0f0f0;}
   .shop-nav .product-list dl dd a{line-height: 65px;}
   .shop-nav .product-list dl dd:last-child{border-bottom: none;}
   .shopdata-intro .intro-txt #shopEvent a{width: 200px; line-height: 52px; font-size: 18px;}

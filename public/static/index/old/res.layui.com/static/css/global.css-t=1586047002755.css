@@ -431,7 +431,7 @@ body .site-demo-nav .layui-nav-item{line-height: 40px}
   .footer-demo p,
   .footer-demo .site-union{height: auto; padding-right: 0;}
   .footer-demo .site-union{top: 0;}
-  .footer-demo .site-union span{top: ;}
+  .footer-demo .site-union span{top: 0 ;}
 
   .site-demo-area,
   .site-demo-editor,

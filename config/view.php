@@ -25,6 +25,7 @@ return [
     'tpl_replace_string' => [
         //'__STATIC__'=> \think\facade\App::GetRootPath(). 'public/static'
         '__STATIC__'=> '/static',
-        '__INDEXPATH__'=> '/static/index'
+        '__INDEXPATH__'=> '/static/index',
+        '__INDEXPATHMODEL__'=> '/static/index/old'
     ],
 ];
