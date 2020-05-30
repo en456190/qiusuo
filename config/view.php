@@ -27,6 +27,8 @@ return [
         '__STATIC__'=> '/static',
         '__INDEXPATH__'=> '/static/index',
         '__MERCHANTPATH__'=> '/static/merchant',
-        '__MIPATH__' => '/static/mi'
+        '__MIPATH__' => '/static/mi',
+        '__INDEXPATHMODEL__'=> '/static/index/old',
+
     ],
 ];

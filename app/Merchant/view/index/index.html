@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html >
+{include file='public/header' /}
+<body>
+{include file='public/common' /}
+<div class="organauth">
+    <div class="message">店铺信息</div>
+    <hr class="hr20">
+    <div class="layui-form">
+        <div class="layui-form-item" id="area-picker">
+            <div class="layui-form-label"><span style="color:red">* </span>所在地区：</div>
+            <div class="layui-input-inline" style="width: 200px;">
+                <select name="province" class="province-selector" placeholder="请选择省" data-value="" lay-filter="province-1">
+                    <option value="">请选择省</option>
+                </select>
+            </div>
+            <div class="layui-input-inline" style="width: 200px;">
+                <select name="city" class="city-selector" placeholder="请选择市" data-value="" lay-filter="city-1">
+                    <option value="">请选择市</option>
+                </select>
+            </div>
+            <div class="layui-input-inline" style="width: 200px;">
+                <select name="county" class="county-selector" placeholder="请选择区" data-value="" lay-filter="county-1">
+                    <option value="">请选择区</option>
+                </select>
+            </div>
+        </div>
+
+
+        <div class="layui-form-item">
+            <label class="layui-form-label"><span style="color:red">* </span>店铺名称：</label>
+            <div class="layui-input-inline" style="width:550px">
+                <input type="text" name="organname" required  lay-verify="required" placeholder="请输入机构名称" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label"><span style="color:red">* </span>设置密码：</label>
+            <div class="layui-input-inline" style="width:550px">
+                <input type="text" name="password" required  lay-verify="required" placeholder="请输入机构名称" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label"><span style="color:red">* </span>确认密码：</label>
+            <div class="layui-input-inline" style="width:550px">
+                <input type="text" name="repass" required  lay-verify="required" placeholder="请输入机构名称" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+
+        <div class="message">基本信息</div>
+        <hr class="hr20">
+        <div class="layui-form-item">
+            <label class="layui-form-label"><span style="color:red">* </span>上传证件：</label>
+            <div class="layui-input-inline" style="width:550px">
+                <input type="text" name="password" required  lay-verify="required" placeholder="请输入机构名称" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!--{include file='public/footer' /}-->
+
+</body>
+<script type="text/javascript">
+    //配置插件目录
+    layui.config({
+        base: '__MERCHANTPATH__/lib/mods/'
+        , version: '1.0'
+    });
+    //一般直接写在一个js文件中
+    layui.use(['layer', 'form', 'layarea'], function () {
+        // $ = layui.jquery;
+        var layer = layui.layer
+            , form = layui.form
+            , layarea = layui.layarea;
+
+        layarea.render({
+            elem: '#area-picker',
+            change: function (res) {
+                //选择结果
+                console.log(res);
+            }
+        });
+
+    });
+
+</script>
+</html>
