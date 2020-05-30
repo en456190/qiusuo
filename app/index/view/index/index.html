@@ -4,9 +4,6 @@
 {include file='public/header' /}
 <body>
 {include file='public/common' /}
-
-<!--<script src="../../cdn.staticfile.org/html5shiv/r29/html5.min.js" tppabs="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>-->
-<!--<script src="../../cdn.staticfile.org/respond.js/1.4.2/respond.min.js" tppabs="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>-->
 <![endif]-->
 <div class="shop-nav shop-index">
     <div id="LAY-topbar">
@@ -60,37 +57,37 @@
 <!--                {/foreach}-->
                 <div style="background: #F2E6D6;display: block">
                     <div class="layui-container">
-                        <a href="layuiHomeMall/index.htm" tppabs="https://fly.layui.com/store/layuiHomeMall/" target="_blank">
+                        <a href="layuiHomeMall/index.htm" " target="_blank">
                             <img src="__INDEXPATH__/old/cdn.layui.com/upload/2018_11/168_1541579354090_82219.jpg" tppabs="https://cdn.layui.com/upload/2018_11/168_1541579354090_82219.jpg" alt="简约家居商城模板"></a>
                     </div>
                 </div>
                 <div style="background: #E7E6EE">
                     <div class="layui-container">
-                        <a href="layuiSimpleNews/index.htm" tppabs="https://fly.layui.com/store/layuiSimpleNews/" target="_blank">
+                        <a href="layuiSimpleNews/index.htm" " target="_blank">
                             <img src="__INDEXPATH__/old/cdn.layui.com/upload/2018_11/168_1541751659392_62620.jpg" tppabs="https://cdn.layui.com/upload/2018_11/168_1541751659392_62620.jpg" alt="极简新闻资讯模板"></a>
                     </div>
                 </div>
                 <div style="background: #171717">
                     <div class="layui-container">
-                        <a href="layuiQuietBlog/index.htm" tppabs="https://fly.layui.com/store/layuiQuietBlog/" target="_blank">
+                        <a href="layuiQuietBlog/index.htm" target="_blank">
                             <img src="__INDEXPATH__/old/cdn.layui.com/upload/2018_11/168_1541578489374_99939.jpg" tppabs="https://cdn.layui.com/upload/2018_11/168_1541578489374_99939.jpg" alt="静谧风格个人博客模板"></a>
                     </div>
                 </div>
                 <div style="background: #F5F5F5">
                     <div class="layui-container">
-                        <a href="layuiCateCompany/index.htm" tppabs="https://fly.layui.com/store/layuiCateCompany/" target="_blank">
+                        <a href="layuiCateCompany/index.htm" " target="_blank">
                             <img src="__INDEXPATH__/old/cdn.layui.com/upload/2018_11/168_1542012881618_47524.jpg" tppabs="https://cdn.layui.com/upload/2018_11/168_1542012881618_47524.jpg" alt="餐饮企业网站模板"></a>
                     </div>
                 </div>
                 <div style="background: #E2DEF5">
                     <div class="layui-container">
-                        <a href="layuiMaternalBabyMall/index.htm" tppabs="https://fly.layui.com/store/layuiMaternalBabyMall/" target="_blank">
+                        <a href="layuiMaternalBabyMall/index.htm" target="_blank">
                             <img src="__INDEXPATH__/old/cdn.layui.com/upload/2018_11/168_1542013154213_82579.jpg" tppabs="https://cdn.layui.com/upload/2018_11/168_1542013154213_82579.jpg" alt="母婴商城模板"></a>
                     </div>
                 </div>
                 <div style="background: #040227">
                     <div class="layui-container">
-                        <a href="layuiSimpleBlog/index.htm" tppabs="https://fly.layui.com/store/layuiSimpleBlog/" target="_blank">
+                        <a href="layuiSimpleBlog/index.htm" target="_blank">
                             <img src="__INDEXPATH__/old/cdn.layui.com/upload/2018_11/168_1542012996419_29784.jpg" tppabs="https://cdn.layui.com/upload/2018_11/168_1542012996419_29784.jpg" alt="极简博客模板"></a>
                     </div>
                 </div>
@@ -312,7 +309,7 @@
 </div>
 
 {include file='public/footer' /}
-<script>
+<script type="text/javascript">
     // layui.cache.page = 'store';
     // layui.cache.user = {
     //     username: '游客',
@@ -325,13 +322,15 @@
     //     vip: 0,
     //     sex: ''
     // };
-    // layui.config({
-    //     version: "1586047002755"
-    // }).extend({
-    //     'fly': '//res.layui.com/static/lay/modules/fly/index'
-    // }).use('fly');
+    layui.config({
+        version: "1586047002755"
+    }).extend({
+        'fly': '//res.layui.com/static/lay/modules/fly/index'
+    }).use('fly');
 
-    layui.use('carousel', function(){
+    layui.use(['layer', 'carousel'], function(){
+        $ = layui.jquery;
+        var layer = layui.layer;
         var carousel = layui.carousel;
         //建造实例
         carousel.render({

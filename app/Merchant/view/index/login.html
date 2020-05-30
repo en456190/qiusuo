@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html class="fly-html-layui fly-html-store">
+{include file='public/header' /}
+<body style="background-color:#e2e2e2">
+{include file='public/common' /}
+
+<div class="login">
+    <div class="message">商家入驻</div>
+    <hr class="hr15">
+    <form method="post" class="layui-form" >
+        <div class="layui-form-item">
+            <input type="text" name="cellphone" required  lay-verify="required" placeholder="请输入手机号码" autocomplete="off" class="layui-input">
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-inline" >
+                <input type="text" name="cellphone" required  lay-verify="required" placeholder="请输入短信验证码" autocomplete="off" class="layui-input">
+            </div>
+            <div class="layui-input-inline">
+                <button type="button" class="layui-btn layui-btn-fluid" ><i class="layui-icon layui-icon-email"></i>发送验证码</button>
+            </div>
+        </div>
+        <hr class="hr15">
+        <button type="submit" class="layui-btn layui-btn-fluid" >提交</button>
+        <hr class="hr20" >
+        <a href="#" style="text-align: right;float: right;">入驻流程</a>
+        <div style="clear: both;"></div>
+    </form>
+</div>
+
+
+</body>
+</html>

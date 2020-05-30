@@ -1,29 +1,32 @@
-<div class="layui-header header header-store" style="background-color: #24262F;">
+<div class="layui-header header header-store">
     <div class="layui-container">
         <a class="logo" href="https://www.layui.com/">
-            <img src="__INDEXPATH__/images/layui/logo.png" alt="layui"></a>
-        <div class="layui-form component" lay-filter="LAY-site-header-component"></div>
+            <img src="__INDEXPATH__/images/layui/qiusuo.png" alt="layui"></a>
+<!--        <div class="layui-form component" lay-filter="LAY-site-header-component"></div>-->
         <ul class="layui-nav">
-            <li class="layui-nav-item layui-hide-xs">
-                <a href="https://www.layui.com/doc/">文档</a></li>
-            <li class="layui-nav-item layui-hide-xs">
+            <li class="layui-nav-item layui-this">
+                <a href="{:url('Index/')}">首页</a></li>
+            <li class="layui-nav-item">
                 <a href="">示例</a></li>
-            <li class="layui-nav-item layui-hide-xs ">
+            <li class="layui-nav-item">
                 <a href="">扩展</a></li>
-            <li class="layui-nav-item layui-hide-xs layui-this">
-                <a href="index.htm">模板</a></li>
-            <li class="layui-nav-item layui-hide-xs">
-                <a href="" target="_blank">社区</a></li>
+            <li class="layui-nav-item">
+                <a href="index.htm">模板</a>
+            </li>
+            <li class="layui-nav-item">
+                <a href="" target="_blank">社区</a>
+            </li>
             <li class="layui-nav-item">
                 <a href="javascript:;">周边</a>
                 <dl class="layui-nav-child">
-                    <dd class="layui-hide-sm layui-show-xs" lay-unselect>
+                    <dd class="layui-hide" lay-unselect>
                         <a href="index.htm">模板市场</a></dd>
-                    <dd class="layui-hide-sm layui-show-xs" lay-unselect>
+                    <dd class="layui-hide-sm" lay-unselect>
                         <a href="">扩展组件</a></dd>
-                    <dd class="layui-hide-sm layui-show-xs" lay-unselect>
+                    <dd class="layui-hide" lay-unselect>
                         <a href="https://fly.layui.com/" target="_blank">社区交流</a>
-                        <hr></dd>
+                        <hr>
+                    </dd>
                     <dd lay-unselect>
                         <a href="https://www.layui.com/admin/" target="_blank">后台模板
                             <span class="layui-badge-dot"></span></a>
@@ -38,8 +41,18 @@
                 </dl>
             </li>
             <li class="layui-nav-item">
-                <a class="iconfont icon-touxiang" href="https://fly.layui.com/user/login/"></a>
+                <a href="{:url('index/login')}"><i class="layui-icon layui-icon-user" style="font-size: 20px"></i></a>
             </li>
         </ul>
     </div>
 </div>
+
+<script>
+    //注意：导航 依赖 element 模块，否则无法进行功能性操作
+    layui.use('element', function(){
+        var element = layui.element;
+
+        //…
+    });
+
+</script>

@@ -1,0 +1,35 @@
+/* 头部 */
+.header{height: 59px; border-bottom: 1px solid #404553;  background-color: #393D49;}
+.logo{position: absolute; left: 0; top: 16px;}
+.logo img{width: 82px; height: 31px;}
+
+.header .layui-nav .layui-nav-item{margin: 0 20px; }
+.header .layui-nav .layui-nav-item[mobile]{display: none;}
+
+.header .layui-container .logo{left: 15px;}
+.header .layui-container .layui-nav{position: absolute;right: 100px;top: 0; padding: 0;background: none;}
+.header .layui-nav .layui-badge,
+.header .layui-nav .layui-badge-dot{right: 0;}
+
+/* 机构认证 */
+.organauth{width: 800px;margin: 20px auto; box-shadow:10px 0 10px #ccc;padding: 20px;}
+.areapicker{border:3px solid #009688;border-radius:10px;margin-bottom:10px;padding-top:10px;}
+
+/* 底部 */
+.fly-footer {width:100%;margin: 50px  auto 0px; padding: 20px 0; line-height: 30px; text-align: center; color: #333; border-top: 1px solid #e0e0e0; font-size:13px;}
+.fly-footer .clear {clear: both;}
+.fly-footer .footer-contain{width:1200px;margin: 0px  auto ;}
+.footer-contain a{padding:0 6px; font-weight: 300; color: #333;}
+.footer-contain a:hover{color: #FF6A00; cursor: pointer;}
+.footer-contain .fly-contain{float: left;width:170px; margin-right: 10px;}
+.footer-contain .service{font-size: 25px; color:#FF6A00;margin: 5px 0px;}
+
+.footer-contain .manul-service{width:130px; border: 1px solid #FF6A00; color: #FF6A00;margin:8px auto;}
+.footer-contain .manul-service:hover{background: #FF6A00;color:#fff;cursor: pointer;}
+.footer-contain .manul-service:hover i{color:#fff;cursor: pointer;}
+
+.footer-contain .fly-contain-split{float: left;width:60px;margin:0px 20px;}
+.footer-contain .fly-contain-split span{border-right: 1px solid #e0e0e0; height: 150px; display: inline-block;}
+
+.footer-contain i{font-size: 20px;margin:0px 3px;}
+.footer-contain i:hover{color:#FF6A00;cursor: pointer;}
