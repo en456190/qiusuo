@@ -31,6 +31,17 @@ class Index extends BaseController
         return View::fetch('login');
     }
 
+
+    /**
+     * @return string
+     * @throws \Exception
+     */
+    public function protocol()
+    {
+        //
+        return View::fetch('treatyinfo');
+    }
+
     /**
      * 保存新建的资源
      *

@@ -102,8 +102,8 @@
 .store-list-box img{max-width: 100%;}
 .store-list-box .store-list-cover{width: 100%}
 .shop-temp .temp-normal .shop-more{text-align: center; margin-top: 20px; line-height: 130px;}
-.shop-temp .temp-normal .shop-more i{font-size: 50px; color: #a9a9a9;}
-
+.shop-temp .temp-normal .shop-more i{font-size: 30px; color: #a9a9a9;}
+.shop-temp .temp-normal .shop-more i:hover{color: #5eba78;}
 /*详情页*/
 .store-detail-info{position: absolute; right: 15px; top: 0; font-size: 0}
 .store-detail-info .item{display: inline-block; vertical-align: middle; font-size: 14px;}

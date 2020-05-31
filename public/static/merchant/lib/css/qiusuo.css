@@ -12,9 +12,22 @@
 .header .layui-nav .layui-badge-dot{right: 0;}
 
 /* 机构认证 */
-.organauth{width: 800px;margin: 20px auto; box-shadow:10px 0 10px #ccc;padding: 20px;}
+.organauth{width: 800px;margin: 20px auto; box-shadow:10px 0 10px #ccc;padding: 20px;white-space:nowrap!important; border: 2px solid #F2F2F5}
 .areapicker{border:3px solid #009688;border-radius:10px;margin-bottom:10px;padding-top:10px;}
 
+.message{font: 20px bold;}
+
+.idcard{float: left; margin-right:20px; width: 140px;height: 60px;}
+.idcard button{width: 140px;height: 60px; background-color:#F2F2F5}
+.idcard button i{font-size: 30px;}
+.idcard button:hover{float: left; margin-right:20px; background-color: #5FB878;color:#FFF; border: none;}
+
+.uploadcrede button{background-color: #F2F2F5;}
+.uploadcrede button:hover{background-color: #5FB878;color:#FFF;border: none;}
+
+/* 阅读协议 */
+.organauth .readprotocol {text-align: center; zoom:80%;transform: scale(0.8,0.8);}
+.organauth .readprotocol a{color: #0000FF;vertical-align: bottom;}
 /* 底部 */
 .fly-footer {width:100%;margin: 50px  auto 0px; padding: 20px 0; line-height: 30px; text-align: center; color: #333; border-top: 1px solid #e0e0e0; font-size:13px;}
 .fly-footer .clear {clear: both;}

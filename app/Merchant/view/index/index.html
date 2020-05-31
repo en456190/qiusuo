@@ -5,7 +5,7 @@
 <body>
 {include file='public/common' /}
 <div class="organauth">
-    <div class="message">店铺信息</div>
+    <div class="message"><i class="layui-icon layui-icon-more-vertical"></i>店铺信息</div>
     <hr class="hr20">
     <div class="layui-form">
         <div class="layui-form-item" id="area-picker">
@@ -27,39 +27,105 @@
             </div>
         </div>
 
-
         <div class="layui-form-item">
             <label class="layui-form-label"><span style="color:red">* </span>店铺名称：</label>
             <div class="layui-input-inline" style="width:550px">
-                <input type="text" name="organname" required  lay-verify="required" placeholder="请输入机构名称" autocomplete="off" class="layui-input">
+                <input type="text" name="organname" required  lay-verify="required" placeholder="请输入店铺名称" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label"><span style="color:red">* </span>设置密码：</label>
             <div class="layui-input-inline" style="width:550px">
-                <input type="text" name="password" required  lay-verify="required" placeholder="请输入机构名称" autocomplete="off" class="layui-input">
+                <input type="text" name="password" required  lay-verify="required" placeholder="请设置密码" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label"><span style="color:red">* </span>确认密码：</label>
             <div class="layui-input-inline" style="width:550px">
-                <input type="text" name="repass" required  lay-verify="required" placeholder="请输入机构名称" autocomplete="off" class="layui-input">
+                <input type="text" name="repass" required  lay-verify="required" placeholder="请确认秘密" autocomplete="off" class="layui-input">
             </div>
         </div>
 
-        <div class="message">基本信息</div>
+        <div class="message"><i class="layui-icon layui-icon-more-vertical"></i>基本信息&nbsp;&nbsp;&nbsp;<span style="font-size: 10px;">(暂时只支持中国大陆居民身份证)</span></div>
         <hr class="hr20">
         <div class="layui-form-item">
             <label class="layui-form-label"><span style="color:red">* </span>上传证件：</label>
-            <div class="layui-input-inline" style="width:550px">
-                <input type="text" name="password" required  lay-verify="required" placeholder="请输入机构名称" autocomplete="off" class="layui-input">
+            <div class="layui-input-block">
+                <div class=" uploadcrede">
+                    <button class="layui-btn layui-btn-primary" style="width: 140px; margin-right:6px;"><i class="layui-icon layui-icon-upload-drag"></i>  电脑上传</button>
+                    <button class="layui-btn layui-btn-primary" style="width: 140px;"><i class="layui-icon layui-icon-login-wechat"></i>  微信上传</button>
+
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label"><span style="color:red">* </span>身份证件像：</label>
+            <div class="layui-input-block">
+                <div class="idcard">
+                    <button class="layui-btn layui-btn-primary">
+                        <i class="iconfont icon-shenfenzhengzhengmian"></i>
+                        选择文件
+                    </button>
+                </div>
+                <div class="idcard">
+                    <button class="layui-btn layui-btn-primary">
+                        <i class="iconfont icon-shenfenzhengfanmian" style="font-size: 30px;"></i>
+                        选择文件
+                    </button>
+                </div>
+                <div style="clear:both;"></div>
             </div>
         </div>
 
+        <div class="message"><i class="layui-icon layui-icon-more-vertical"></i>营业执照信息&nbsp;&nbsp;&nbsp;<span style="font-size: 10px;">(需提供开店人与经营者姓名一致的个体工商户营业执照)</span></div>
+        <hr class="hr20">
+        <div class="layui-form-item">
+            <label class="layui-form-label"><span style="color:red">* </span>是否三证合一：</label>
+            <div class="layui-input-block">
+                <input type="radio" name="sex" value="男" title="是">
+                <input type="radio" name="sex" value="女" title="否">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label"><span style="color:red">* </span>营业期限：</label>
+            <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="businessterm" placeholder="请选择营业期限">
+            </div>
+            <div class="layui-input-inline">
+                <input type="checkbox" name="" title="长期有效" lay-skin="primary" checked>
+            </div>
+        </div>
+
+        <div class="message"><i class="layui-icon layui-icon-more-vertical"></i>选填信息</div>
+        <hr class="hr20">
+        <div class="layui-form-item">
+            <label class="layui-form-label">是否出口商家：</label>
+            <div class="layui-input-inline" style="width:550px">
+                <input type="radio" name="sex" value="男" title="是">
+                <input type="radio" name="sex" value="女" title="否">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">第三方店铺链接：</label>
+            <div class="layui-input-inline" style="width:550px">
+                <input type="text" name="organname" required  lay-verify="required" placeholder="请输入店铺链接" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="readprotocol">
+                <input type="checkbox" name="treaty" id="treatycbx"  title="我已经阅读并同意" lay-skin="primary">
+<!--                <a href="javascript:void(0)" onclick="xadmin.open('添加用户','{:url(\'index/protocol\')}',550,420)">《球索养老平台合作协议》</a>-->
+                <a id="treatylink" href="javascript:void (0)">《球索养老平台合作协议》</a>
+            </div>
+        </div>
+
+        <hr class="hr20">
+        <button class="layui-btn layui-btn-primary" ><i class="layui-icon layui-icon-prev"></i>上一页</button>
+        <button type="submit" class="layui-btn" >提交</button>
     </div>
 </div>
 
-<!--{include file='public/footer' /}-->
+{include file='public/footer' /}
 
 </body>
 <script type="text/javascript">
@@ -69,11 +135,12 @@
         , version: '1.0'
     });
     //一般直接写在一个js文件中
-    layui.use(['layer', 'form', 'layarea'], function () {
-        // $ = layui.jquery;
+    layui.use(['layer', 'form', 'layarea', 'laydate'], function () {
+         $ = layui.jquery;
         var layer = layui.layer
             , form = layui.form
-            , layarea = layui.layarea;
+            , layarea = layui.layarea
+            , laydate = layui.laydate;
 
         layarea.render({
             elem: '#area-picker',
@@ -83,7 +150,44 @@
             }
         });
 
+        laydate.render({
+            elem: '#businessterm',
+        })
+
+        $('#treatylink').click(function()
+        {
+            showTreaty();
+
+
+        });
+        function showTreaty()
+        {
+            layer.open({
+                type: 2,
+                title: '合作协议',
+                content: '{:url(\'index/protocol\')}', //这里content是一个普通的String
+                btn : ['确定', '取消']
+                ,yes: function(index, layero){
+                    $("#treatycbx").prop("checked", true);
+                    form.render('checkbox');
+                    layer.close(index);
+                }
+                ,btn2: function(index, layero){
+                    $("#treatycbx").prop("checked", false);
+                    form.render('checkbox');
+                }
+                ,cancel: function(){
+                    $("#treatycbx").prop("checked", false);
+                    form.render('checkbox');
+                    //return false 开启该代码可禁止点击该按钮关闭
+                }
+            });
+        }
+
+
     });
+
+
 
 </script>
 </html>
