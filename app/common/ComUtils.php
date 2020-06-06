@@ -114,6 +114,10 @@ class ComUtils
         $ipAllNum = ($ipend - $ipbegin) / 7 + 1;
         $BeginNum = 0;
         $EndNum = $ipAllNum;     //使用二分查找法从索引记录中搜索匹配的IP记录
+        $ip1num = 0;
+        $ip2num = 0;
+        $ipAddr1 = '';
+        $ipAddr2 = '';
         while ($ip1num > $ipNum || $ip2num < $ipNum) {
             $Middle = intval(($EndNum + $BeginNum) / 2);
 
