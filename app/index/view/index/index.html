@@ -135,7 +135,7 @@
                     <div class="layui-row layui-col-space20">
                         {foreach $hotBriefs as $brief}
                         <div class="layui-col-xs6 layui-col-md3">
-                            <a class="template store-list-box" href="layuiAdmin/index.htm">
+                            <a class="template store-list-box" href="layuiAdmin/index.html">
                                 <img src="__INDEXPATH__/images/{$brief.img}.jpg" alt="{$brief.title}" class="store-list-cover">
                                 <h2 class="layui-elip">{$brief.name}</h2>
                                 <p class="price">
@@ -144,32 +144,6 @@
                             </a>
                         </div>
                         {/foreach}
-
-
-                        <div class="layui-col-xs6 layui-col-md3">
-                            <a class="template store-list-box" href="layuiQuietBlog/index.htm" tppabs="https://fly.layui.com/store/layuiQuietBlog/">
-                                <img src="__INDEXPATHMODEL__/cdn.layui.com/upload/2018_11/168_1541591846215_76528.jpg" tppabs="https://cdn.layui.com/upload/2018_11/168_1541591846215_76528.jpg" class="store-list-cover">
-                                <h2 class="layui-elip">静谧风格个人博客模板</h2>
-                                <p class="price">
-                                    <span title="金额">￥29</span></p>
-                            </a>
-                        </div>
-                        <div class="layui-col-xs6 layui-col-md3">
-                            <a class="template store-list-box" href="layim/index.htm" tppabs="https://fly.layui.com/store/layim/">
-                                <img src="__INDEXPATHMODEL__/cdn.layui.com/upload/2018_11/168_1541544049294_47382.jpg" tppabs="https://cdn.layui.com/upload/2018_11/168_1541544049294_47382.jpg" class="store-list-cover">
-                                <h2 class="layui-elip">LayIM 网页即时通讯前端解决方案</h2>
-                                <p class="price">
-                                    <span title="金额">￥600</span></p>
-                            </a>
-                        </div>
-                        <div class="layui-col-xs6 layui-col-md3">
-                            <a class="template store-list-box" href="layuiSimpleNews/index.htm" tppabs="https://fly.layui.com/store/layuiSimpleNews/">
-                                <img src="__INDEXPATHMODEL__/cdn.layui.com/upload/2018_11/168_1543493090773_84195.jpg" tppabs="https://cdn.layui.com/upload/2018_11/168_1543493090773_84195.jpg" class="store-list-cover">
-                                <h2 class="layui-elip">极简自媒体新闻资讯模板</h2>
-                                <p class="price">
-                                    <span title="金额">￥58</span></p>
-                            </a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -181,161 +155,17 @@
                         <span></span>
                     </p>
                     <div class="layui-row layui-col-space20 shoplist">
+                        {foreach $moreOrgan as $organ}
                         <div class="layui-col-xs12 layui-col-sm6 layui-col-md4 layui-col-lg3">
-                            <a class="template store-list-box" href="layuiWeNews/index.htm" tppabs="https://fly.layui.com/store/layuiWeNews/">
-                                <img src="__INDEXPATHMODEL__/cdn.layui.com/upload/2018_11/168_1543499206847_90773.jpg" tppabs="https://cdn.layui.com/upload/2018_11/168_1543499206847_90773.jpg" class="store-list-cover">
-                                <h2 class="layui-elip">微新闻模板</h2>
+                            <a class="template store-list-box" href="layuiAdmin/index.html">
+                                <img src="__INDEXPATH__/images/{$organ.img}.jpg" class="store-list-cover">
+                                <h2 class="layui-elip">{$organ.name}</h2>
                                 <div>
-                                    <label class="layui-badge-rim store-list-pay">￥19</label>
-                                    <div class="store-list-colorbar" title="蓝色调">
-                                        <span class="store-color-bar" style="background: #1E9FFF"></span>
-                                    </div>
+                                    <label class="layui-badge-rim store-list-pay">{$organ.charge}</label>
                                 </div>
                             </a>
                         </div>
-                        <div class="layui-col-xs12 layui-col-sm6 layui-col-md4 layui-col-lg3">
-                            <a class="template store-list-box" href="layuiCateCompany/index.htm" tppabs="https://fly.layui.com/store/layuiCateCompany/">
-                                <img src="__INDEXPATHMODEL__/cdn.layui.com/upload/2018_11/168_1541609075171_4192.jpg" tppabs="https://cdn.layui.com/upload/2018_11/168_1541609075171_4192.jpg" class="store-list-cover">
-                                <h2 class="layui-elip">餐饮企业网站模版</h2>
-                                <div>
-                                    <label class="layui-badge-rim store-list-pay">￥19</label>
-                                    <div class="store-list-colorbar" title="黑色调">
-                                        <span class="store-color-bar" style="background: #000"></span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="layui-col-xs12 layui-col-sm6 layui-col-md4 layui-col-lg3">
-                            <a class="template store-list-box" href="layuiUniversalCompany/index.htm" tppabs="https://fly.layui.com/store/layuiUniversalCompany/">
-                                <img src="__INDEXPATHMODEL__/cdn.layui.com/upload/2018_11/168_1541607570391_86468.jpg" tppabs="https://cdn.layui.com/upload/2018_11/168_1541607570391_86468.jpg" class="store-list-cover">
-                                <h2 class="layui-elip">通用企业网站模板</h2>
-                                <div>
-                                    <label class="layui-badge-rim">免费</label>
-                                    <div class="store-list-colorbar" title="白色调">
-                                        <span class="store-color-bar" style="background: #f8f8f8"></span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="layui-col-xs12 layui-col-sm6 layui-col-md4 layui-col-lg3">
-                            <a class="template store-list-box" href="layuiNetCompany/index.htm" tppabs="https://fly.layui.com/store/layuiNetCompany/">
-                                <img src="__INDEXPATHMODEL__/cdn.layui.com/upload/2018_11/168_1541606785720_43588.jpg" tppabs="https://cdn.layui.com/upload/2018_11/168_1541606785720_43588.jpg" class="store-list-cover">
-                                <h2 class="layui-elip">网络公司企业网站模版</h2>
-                                <div>
-                                    <label class="layui-badge-rim">免费</label>
-                                    <div class="store-list-colorbar" title="墨绿色调">
-                                        <span class="store-color-bar" style="background: #39c2d2"></span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="layui-col-xs12 layui-col-sm6 layui-col-md4 layui-col-lg3">
-                            <a class="template store-list-box" href="layuiMaternalBabyMall/index.htm" tppabs="https://fly.layui.com/store/layuiMaternalBabyMall/">
-                                <img src="__INDEXPATHMODEL__/cdn.layui.com/upload/2018_11/168_1541605166076_26629.jpg" tppabs="https://cdn.layui.com/upload/2018_11/168_1541605166076_26629.jpg" class="store-list-cover">
-                                <h2 class="layui-elip">母婴商城模版</h2>
-                                <div>
-                                    <label class="layui-badge-rim">免费</label>
-                                    <div class="store-list-colorbar" title="紫色调">
-                                        <span class="store-color-bar" style="background: #813bd9"></span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="layui-col-xs12 layui-col-sm6 layui-col-md4 layui-col-lg3">
-                            <a class="template store-list-box" href="layuiSimpleBlog/index.htm" tppabs="https://fly.layui.com/store/layuiSimpleBlog/">
-                                <img src="__INDEXPATHMODEL__/cdn.layui.com/upload/2018_11/168_1541594387829_21849.jpg" tppabs="https://cdn.layui.com/upload/2018_11/168_1541594387829_21849.jpg" class="store-list-cover">
-                                <h2 class="layui-elip">极简博客模板</h2>
-                                <div>
-                                    <label class="layui-badge-rim">免费</label>
-                                    <div class="store-list-colorbar" title="紫色调">
-                                        <span class="store-color-bar" style="background: #813bd9"></span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="layui-col-xs12 layui-col-sm6 layui-col-md4 layui-col-lg3">
-                            <a class="template store-list-box" href="layuiQuietBlog/index.htm" tppabs="https://fly.layui.com/store/layuiQuietBlog/">
-                                <img src="__INDEXPATHMODEL__/cdn.layui.com/upload/2018_11/168_1541591846215_76528.jpg" tppabs="https://cdn.layui.com/upload/2018_11/168_1541591846215_76528.jpg" class="store-list-cover">
-                                <h2 class="layui-elip">静谧风格个人博客模板</h2>
-                                <div>
-                                    <label class="layui-badge-rim store-list-pay">￥29</label>
-                                    <div class="store-list-colorbar" title="黑色调">
-                                        <span class="store-color-bar" style="background: #000"></span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="layui-col-xs12 layui-col-sm6 layui-col-md4 layui-col-lg3">
-                            <a class="template store-list-box" href="layuiXianyan/index.htm" tppabs="https://fly.layui.com/store/layuiXianyan/">
-                                <img src="__INDEXPATHMODEL__/cdn.layui.com/upload/2018_11/168_1541587884233_39873.jpg" tppabs="https://cdn.layui.com/upload/2018_11/168_1541587884233_39873.jpg" class="store-list-cover">
-                                <h2 class="layui-elip">闲言轻博客模板</h2>
-                                <div>
-                                    <label class="layui-badge-rim">免费</label>
-                                    <div class="store-list-colorbar" title="蓝色调">
-                                        <span class="store-color-bar" style="background: #1E9FFF"></span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="layui-col-xs12 layui-col-sm6 layui-col-md4 layui-col-lg3">
-                            <a class="template store-list-box" href="FlyTemplate/index.htm" tppabs="https://fly.layui.com/store/FlyTemplate/">
-                                <img src="__INDEXPATHMODEL__/cdn.layui.com/upload/2018_11/168_1541584083687_58443.jpg" tppabs="https://cdn.layui.com/upload/2018_11/168_1541584083687_58443.jpg" class="store-list-cover">
-                                <h2 class="layui-elip">Fly社区 - layui 官方社区模版</h2>
-                                <div>
-                                    <label class="layui-badge-rim">免费</label>
-                                    <div class="store-list-colorbar" title="黑色调">
-                                        <span class="store-color-bar" style="background: #000"></span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="layui-col-xs12 layui-col-sm6 layui-col-md4 layui-col-lg3">
-                            <a class="template store-list-box" href="layuiSimpleNews/index.htm" tppabs="https://fly.layui.com/store/layuiSimpleNews/">
-                                <img src="__INDEXPATHMODEL__/cdn.layui.com/upload/2018_11/168_1543493090773_84195.jpg" tppabs="https://cdn.layui.com/upload/2018_11/168_1543493090773_84195.jpg" class="store-list-cover">
-                                <h2 class="layui-elip">极简自媒体新闻资讯模板</h2>
-                                <div>
-                                    <label class="layui-badge-rim store-list-pay">￥58</label>
-                                    <div class="store-list-colorbar" title="蓝色调">
-                                        <span class="store-color-bar" style="background: #1E9FFF"></span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="layui-col-xs12 layui-col-sm6 layui-col-md4 layui-col-lg3">
-                            <a class="template store-list-box" href="layuiHomeMall/index.htm" tppabs="https://fly.layui.com/store/layuiHomeMall/">
-                                <img src="__INDEXPATHMODEL__/cdn.layui.com/upload/2018_11/168_1541547672289_84484.jpg" tppabs="https://cdn.layui.com/upload/2018_11/168_1541547672289_84484.jpg" class="store-list-cover">
-                                <h2 class="layui-elip">简约家居商城模板</h2>
-                                <div>
-                                    <label class="layui-badge-rim store-list-pay">￥66</label>
-                                    <div class="store-list-colorbar" title="棕色调">
-                                        <span class="store-color-bar" style="background: #794712"></span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="layui-col-xs12 layui-col-sm6 layui-col-md4 layui-col-lg3">
-                            <a class="template store-list-box" href="layuiAdmin/index.htm" tppabs="https://fly.layui.com/store/layuiAdmin/">
-                                <img src="__INDEXPATHMODEL__/cdn.layui.com/upload/2018_11/168_1541542262728_21622.jpg" tppabs="https://cdn.layui.com/upload/2018_11/168_1541542262728_21622.jpg" class="store-list-cover">
-                                <h2 class="layui-elip">layuiAdmin 通用后台管理模板</h2>
-                                <div>
-                                    <label class="layui-badge-rim store-list-pay">收费</label>
-                                    <div class="store-list-colorbar" title="任意色调">
-                                        <img src="__INDEXPATHMODEL__/cdn.layui.com/upload/2018_11/168_1541355296795_60368.jpg" tppabs="https://cdn.layui.com/upload/2018_11/168_1541355296795_60368.jpg" class="store-color-bar"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="layui-col-xs12 layui-col-sm6 layui-col-md4 layui-col-lg3">
-                            <a class="template store-list-box" href="layim/index.htm" tppabs="https://fly.layui.com/store/layim/">
-                                <img src="__INDEXPATHMODEL__/cdn.layui.com/upload/2018_11/168_1541544049294_47382.jpg" tppabs="https://cdn.layui.com/upload/2018_11/168_1541544049294_47382.jpg" class="store-list-cover">
-                                <h2 class="layui-elip">LayIM 网页即时通讯前端解决方案</h2>
-                                <div>
-                                    <label class="layui-badge-rim store-list-pay">￥600</label>
-                                    <div class="store-list-colorbar" title="灰色调">
-                                        <span class="store-color-bar" style="background: #e6e6e6"></span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
+                        {/foreach}
                     </div>
                     <div class="shop-more">
                         <a href="cat/0/index.htm" tppabs="https://fly.layui.com/store/cat/0/">
